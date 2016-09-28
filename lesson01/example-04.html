@@ -1,0 +1,28 @@
+<html>
+<head>
+    <script>
+        console.log("working");
+        //now we will try JSON-P
+        //passing in "callback" as the callback function name
+        var url = "http://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol=goog&jsoncallback=callback";
+        function callback(data)
+        {
+            console.log(data);
+            //the data will be an object, with accessible properties
+            document.getElementById('name').innerHTML = "Name: " + data.Name;
+            document.getElementById('price').innerHTML = "Price: " + data.LastPrice;
+        }
+        var script = document.createElement('script');
+        script.src = url;
+        //add the content of the response, IE the callback function call to the page
+        //this will call the "callback()" function defined above, passing in the response data
+        document.getElementsByTagName('head')[0].appendChild(script);
+    </script>
+</head>
+<body>
+    <h1>This will try to load the data on the client side and succeed</h1>
+
+    <div id="name">Name: </div>
+    <div id="price">Price: </div>
+</body>
+</html>

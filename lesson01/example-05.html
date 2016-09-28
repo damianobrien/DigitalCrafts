@@ -1,0 +1,65 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        console.log("working");
+        var counter = 0; //starting request number
+        var maxRequests = 100; //run until we have sent 100 valid requests
+        var timeout = 2000; //number of milliseconds to wait between requests
+        var getData = function () {
+
+            //reset the app once we hit our max, we can alternatively run a do/while indefinitely
+            if (counter === maxRequests) {
+                //Find and overwrite the contents of the html
+                $('#name').empty();
+                $('#price').empty();
+                $('#counter').empty();
+                counter = 0;
+            }
+
+            //read JQUERY AJAX DOCS HERE: http://api.jquery.com/jquery.ajax/
+            $.ajax({
+                url: 'http://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol=goog&jsoncallback=callback',
+                async: true,
+                dataType: 'jsonp', //again, JSONP
+                success: function (data) {
+                    console.log(data);
+                    //Find and overwrite the contents of the html
+                    $('#name').html('<div>Name: ' + data.Name + '</div>');
+                    $('#price').html('<div>Price: ' + data.LastPrice + '</div>');
+                    $('#counter').html('<div>Counter: ' + counter + '</div>');
+                    counter++;
+                    sleep(timeout);
+                    //call the main function if ithas run less than the max # of reqs
+                    if (counter < maxRequests) getData();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    //something went wrong with thre response
+                    console.log(jqXHR.status);
+                    sleep(timeout);//wait and try again
+                    //call the main function again
+                    getData();
+                }
+            });
+        };
+
+        //helper function to pause the app
+        function sleep(milliseconds) {
+            var start = new Date().getTime();
+            for (var i = 0; i < 1e7; i++) {
+                if ((new Date().getTime() - start) > milliseconds) {
+                    break;
+                }
+            }
+        }
+        getData();
+    </script>
+
+</head>
+<body>
+    <h1>This will reload the data continuously without reloading the page</h1>
+    <div id="name">Name:</div>
+    <div id="price">Price:</div>
+    <div id="counter">Counter:</div>
+</body>
+</html>

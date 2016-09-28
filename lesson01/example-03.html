@@ -1,0 +1,30 @@
+<html>
+<head>
+    <script>
+        console.log("working");
+        //location of the remote data
+        var url = "http://dev.markitondemand.com/MODApis/Api/v2/Quote/json?symbol=goog";
+
+        //Make an AJAX request using JavaScipt
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", url, true);
+        xhr.responseType = "json"; //specify the returned format
+        xhr.onload = function() {
+            var status = xhr.status;
+            if (status == 200) {
+                console.log(xhr);
+                //if this did work, we could access the data here
+            } else {
+                console.log("didn't work");
+            }
+        };
+        xhr.send();
+    </script>
+</head>
+<body>
+    <h1>This will try to load the data on the client side and fail</h1>
+
+    <div>Name: </div>
+    <div>Price: </div>
+</body>
+</html>
