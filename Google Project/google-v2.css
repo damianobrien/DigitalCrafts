@@ -1,0 +1,172 @@
+body {
+	font-family: arial, sans-serif;
+	font-size: 13.33px;
+	padding: 0;
+	margin: 0;
+}
+
+#logo{
+	width:272px;
+}
+
+#bell{
+	background: url(http://ssl.gstatic.com/gb/images/i1_1967ca6a.png) 0 0;
+	height:34px;
+	width:30px;
+	border-radius: 30px;
+	background-position: -390px 0px;
+	background-color: rgba(0,0,0,.55);
+	background-repeat: no-repeat;
+	padding: 0px; 
+	zoom: 0.75; -moz-transform: scale(0.75);
+}
+
+.nav {
+	min-width:980px;
+	height:62px;
+}
+
+.navbar{
+	float:right;
+	//min-width: 980px;
+	margin-right:30px;
+}
+
+.navbar a{
+	color:#000;
+	text-decoration:none;
+}
+
+.navbar li{
+	display: table-cell;
+	padding: 14px 8px 8px 8px; 
+	text-align: center; 
+	list-style: none;
+	vertical-align: middle;
+}
+
+.footer {
+	position:absolute;
+	bottom:0px;
+	width:100%;
+	background: #f2f2f2;
+	height:40px;
+	line-height:40px;
+	border-top: 1px solid #e4e4e4;
+}
+
+.footer a {
+	text-decoration:none;
+	color:#666;
+}
+
+#footer-left{
+	float:left;
+}
+#footer-left a{
+	padding-left:27px;
+}
+
+#footer-right{
+	float:right;
+}
+
+#footer-right a{
+	padding-right:27px;
+}
+
+#icon {
+	height: 25px;
+	width: 25px;
+	vertical-align: middle;
+}
+#photo {
+	border-radius: 25px;
+	height: 33px;
+	width: 33px;
+	zoom: 0.83; -moz-transform: scale(0.83);
+}
+
+.logo {
+	clear: both;
+	margin-top: 142px;
+	text-align: center;  /* Why does this work and not the below margin:auto attempt? */
+	padding-bottom: 20px;
+}
+
+#search-btn {
+	padding-left: 16px;
+	padding-right: 16px;
+	line-height: 20px;
+	display: inline-block;
+	text-decoration: none;
+	color: #404040;
+	margin: 0px 8px;
+	height: 50px;
+	border: #DCDCDC 1px solid;
+	background-color: #F2F2F2;
+	background-image: -webkit-linear-gradient(top, #F5F5F5, #F1F1F1);
+	background-image: -moz-linear-gradient(top, #F5F5F5, #F1F1F1);
+}
+
+#search-form {
+	display: inline;
+	width: 568px;
+	height: 36px;
+	border: 1px solid #d8d8d8;
+	text-indent: 7px;
+}
+
+#microphone {
+	vertical-align: middle;
+	height: 24px;
+	width: 24px;
+	margin-left: -32px;
+}
+
+#search-btn-row {
+	padding-top:10px;
+}
+
+form{text-align: center;}
+
+
+button {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 16px;
+  padding-right: 16px;
+  appearance: none;
+  overflow: hidden;
+  height: 50px;
+  border: #DCDCDC 1px solid;
+  background-color: #F2F2F2;
+  background-image: -webkit-linear-gradient(top, #F5F5F5, #F1F1F1);
+  background-image: -moz-linear-gradient(top, #F5F5F5, #F1F1F1);
+}
+button:hover {
+  border-color: #cfcfcf;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 1px;
+  background-image: -webkit-linear-gradient(top, #f8f8f8, #F1F1F1);
+  background-image: -moz-linear-gradient(top, #f8f8f8, #F1F1F1);
+}
+button:active {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 1px;
+  outline: none !important;
+}
+button:focus {
+  outline: 1px #08c solid;
+}
+button ul {
+  margin-top: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-transition: margin-top .45s ease-in-out;
+  -moz-transition: margin-top .45s ease-in-out;
+  transition: margin-top .45s ease-in-out;
+}
+button ul li {
+  display: block;
+  height: 22px;
+  padding: 1em;
+}
